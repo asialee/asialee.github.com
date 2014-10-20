@@ -1,182 +1,115 @@
-keywords:     "ruby, ruby on rails, java, programming, web, c language, android, code, linux"
-description:  "This blog is about skills in ruby, ruby on rails, java, programming, web, c language, android, code, linux"
+permalink: /:categories/:year/:month/:day/:title 
 
-inc:
-  # Blog Information
-  title:        "Simple, Not Easy"
-  subtitle:     "allenlsy.com"
-  cover_image:  blog-cover.jpg
-  logo:         logo.jpg
+exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
+auto: true
+pygments: true
+paginate: 4
+# enable github favored Markdown
+markdown: redcarpet
 
+excerpt_separator: <!-- more -->
 
-  # Company information
-  company:      allenlsy
-  url:          http://allenlsy.com/
-  facebook:     allenlsy
-  twitter:      allenlsy
-  gplus:        '118230970865161551961'
-  # about_link:   /about/
-
-  # Product Information
-  # product_link: http://incorporated.sendtoinc.com/
-  # tagline:      "Get a modern blog for your company"
-
-  # Comments
-  disqus:
-    # Eg. "exampleblog" Set to false to disable comments
-    shortname: 'allenlsy'
-
-  # Sharing settings
-  sharing:
-    twitter:    true
-    facebook:   true
-    gplus:      true
-    hn:         true
-
-
-  # Analytics
-  analytics:
-    google:
-      # eg. 'UA-123-12'
-      id: 'UA-24647338-1'
-
-  # Google Fonts
-  google_font: 'Open+Sans:400,700,800|Oswald|PT+Mono|Ubuntu+Mono'
-
-  # Setup your fonts, colors etc at _assets/stylesheets/main.scss
-
-# site author
-author:
-  name: allenlsy
-  twitter: allenlsy
-  gplus: 118230970865161551961
-  image: avatar.jpg
-  logo: logo.jpg
-  bio:
-      Live in Singapore. Ruby on Rails Developer. Like coffee, music, photography & Chelsea.
-
-# url:         http://incorporated.sendtoinc.com
-source:      .
-destination: ./_site
-plugins:     ./_plugins
-layouts:     ./_layouts
-include:     ['.htaccess']
-exclude:     []
-timezone:    Asia/Singapore
-
-# Show future posts
-future:      false
-show_drafts: nil
-limit_posts: 0
-highlighter: pygments
-
-relative_permalinks: true
-
-permalink:     pretty
-paginate_path: 'page:num'
-paginate: 10
-
-markdown:      redcarpet
-markdown_ext:  markdown,mkd,mkdn,md
-textile_ext:   textile
-
-excerpt_separator: "<!-- more -->"
-
-safe:        false
-host:        0.0.0.0
-port:        4000
-baseurl:     /
-lsi:         false
-
-maruku:
-  use_tex:    false
-  use_divs:   false
-  png_engine: blahtex
-  png_dir:    images/latex
-  png_url:    /images/latex
-
-rdiscount:
-  extensions: []
-
-
-redcarpet:
-  extensions: [ "with_toc_data", "tables", "prettify" ]
-
-kramdown:
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  smart_quotes: lsquo,rsquo,ldquo,rdquo
-  use_coderay: false
-  # input: GFM
-
-  coderay:
-    coderay_wrap: div
-    coderay_line_numbers: inline
-    coderay_line_numbers_start: 1
-    coderay_tab_width: 4
-    coderay_bold_every: 10
-    coderay_css: style
-
-redcloth:
-  hard_breaks: true
-
+title : 进击的xp!
+tagline: OpenCV OpenCL 
+author : 
+  name : pengx17
+  email : pengxiao@outlook.com
+  github : https://github.com/pengx17
+  weibo : http://www.weibo.com/1773498301/profile
+  linkedin : http://cn.linkedin.com/pub/peng-xiao/40/92a/636
+  qq : 248901881
+# The production_url is only used when full-domain names are needed
+# such as sitemap.txt 
+# Most places will/should use BASE_PATH to make the urls
 #
-# jekyll-assets: see more at https://github.com/ixti/jekyll-assets
+# If you have set a CNAME (pages.github.com) set your custom domain here.
+# Else if you are pushing to username.github.io, replace with your username.
+# Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
-assets:
+production_url : http://pengx17.me
 
-  dirname: assets
-  baseurl: /assets/
-  sources:
-    - _assets/javascripts
-    - _assets/stylesheets
-    - _assets/images
-  js_compressor: uglifier
-  css_compressor: sass
-  cachebust: none
-  cache: false
-  gzip: [ text/css, application/javascript ]
-  debug: false
+# All Jekyll-Bootstrap specific configurations are namespaced into this hash
+#
+pengx :
+  version : 0.3.0
 
-permalink:  /:title
+  # All links will be namespaced by BASE_PATH if defined.
+  # Links in your website should always be prefixed with {{BASE_PATH}}
+  # however this value will be dynamically changed depending on your deployment situation.
+  #
+  # CNAME (http://yourcustomdomain.com)
+  #   DO NOT SET BASE_PATH 
+  #   (urls will be prefixed with "/" and work relatively)
+  #
+  # GitHub Pages (http://username.github.io)
+  #   DO NOT SET BASE_PATH 
+  #   (urls will be prefixed with "/" and work relatively)
+  #
+  # GitHub Project Pages (http://username.github.io/project-name)
+  #
+  #   A GitHub Project site exists in the `gh-pages` branch of one of your repositories.
+  #  REQUIRED! Set BASE_PATH to: http://username.github.io/project-name
+  #
+  # CAUTION:
+  #   - When in Localhost, your site will run from root "/" regardless of BASE_PATH
+  #   - Only the following values are falsy: ["", null, false]
+  #   - When setting BASE_PATH it must be a valid url.
+  #     This means always setting the protocol (http|https) or prefixing with "/"
+  BASE_PATH : false
 
-# Links to include in top navigation
-# For external links add external: true
-links:
-  - title: Archives
-    url: /archives.html
-  - title: About
-    url: /about.html
-  - title: Tags
-    url: /tags.html
-  # - title: Casts
-  #   url: http://cast.allenlsy.com
-  - title: Galleries
-    url: /galleries
+  # By default, the asset_path is automatically defined relative to BASE_PATH plus the enabled theme.
+  # ex: [BASE_PATH]/assets/themes/[THEME-NAME]
+  #
+  # Override this by defining an absolute path to assets here.
+  # ex: 
+  #   http://s3.amazonaws.com/yoursite/themes/watermelon
+  #   /assets
+  #
+  ASSET_PATH : false
 
-tag_page_layout: tag_page
-tag_page_dir: tags
+  # These paths are to the main pages Jekyll-Bootstrap ships with.
+  # Some JB helpers refer to these paths; change them here if needed.
+  #
+  archive_path: /posts.html
+  categories_path : /categories.html
+  tags_path : /posts.html
+  atom_path : /atom.xml
+  rss_path : /rss.xml
 
-gallery_theme: fullscreen
+  # Settings for comments helper
+  # Set 'provider' to the comment provider you want to use.
+  # Set 'provider' to false to turn commenting off globally.
+  #
+  comments :
+    provider : duoshuo
+    duoshuo :
+      short_name : pengx17
+   
+  # Settings for analytics helper
+  # Set 'provider' to the analytics provider you want to use.
+  # Set 'provider' to false to turn analytics off globally.
+  #        
+  analytics :
+    provider : google 
+    google : 
+        tracking_id : 'UA-41397531-1'
 
-gallery_dir: galleries
-gallery_layout: gallery
-
-thumbnails_dir: gallery_thumbnails
-
-galleries:
-  - name: Sunrise Changi Beach
-    excerpt: I went to Changi beach with a group of friends at 5:30am that morning, and wait for the sunrise. We were lucky that day. That is also my first time going out shooting with a group.
-    thumbnail: IMG_2635.jpg
-  - name: Pulau Ubin, 2014 Febrary
-    excerpt: Trip to Pulau Ubin on Chinese New Year
-    thumbnail: IMG_2435 - blue.jpg
-  - name: Shaanxi Trip
-    excerpt: I went back to China on May 1st, for my vacation. Shaanxi is the hometown of my wife. We went together, and saw the mountains and clouds on the highway
-    thumbnail: MG_7878.jpg
-  - name: Chinatown, 2014 April
-    thumbnail: 13810115895_20ab3d2889_o.jpg
-  - name: Arab Street, 2014 April
-    thumbnail: 13921567052_b2716e13ed_o.jpg
+  # Settings for sharing helper. 
+  # Sharing is for things like tweet, plusone, like, reddit buttons etc.
+  # Set 'provider' to the sharing provider you want to use.
+  # Set 'provider' to false to turn sharing off globally.
+  #
+  sharing :
+    provider : false
+    
+  # Settings for all other include helpers can be defined by creating 
+  # a hash with key named for the given helper. ex:
+  #
+  #   pages_list :
+  #     provider : "custom"   
+  #
+  # Setting any helper's provider to 'custom' will bypass the helper code
+  # and include your custom code. Your custom file must be defined at:
+  #   ./_includes/custom/[HELPER]
+  # where [HELPER] is the name of the helper you are overriding.
+  

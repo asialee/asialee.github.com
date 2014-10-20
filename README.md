@@ -1,9 +1,5 @@
-allenlsy's blog code repository.
+# pengx17 个人博客
 
-Please visit: 
+### 克隆自：[codepiano](https://codepiano.github.io)，并加入少许修改。
 
-[http://allenlsy.github.io](http://allenlsy.github.io)
-
-__OR__
-
-[allenlsy.com](allenlsy.com)
+个人博客，请遵守 [CC BY-SA 3.0协议](http://creativecommons.org/licenses/by-sa/3.0/deed.zh)
