@@ -9,10 +9,10 @@ markdown: redcarpet
 
 excerpt_separator: <!-- more -->
 
-title : 李牙刷儿
+title :   李牙刷儿
 tagline: OpenCV OpenCL 
 author : 
-  name : 
+  name : 李牙刷儿
   email : liyazhou9@gmail.com
   github : https://github.com/asialee
   weibo : http://weibo.com/u/1632579524
@@ -26,11 +26,11 @@ author :
 # Else if you are pushing to username.github.io, replace with your username.
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
-production_url : http://liyazhou.com
+production_url : http://pengx17.me
 
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
-asialee :
+pengx :
   version : 0.3.0
 
   # All links will be namespaced by BASE_PATH if defined.
@@ -83,7 +83,7 @@ asialee :
   comments :
     provider : duoshuo
     duoshuo :
-      short_name : asialee
+      short_name : pengx17
    
   # Settings for analytics helper
   # Set 'provider' to the analytics provider you want to use.
