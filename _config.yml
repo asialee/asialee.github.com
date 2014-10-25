@@ -9,13 +9,13 @@ markdown: redcarpet
 
 excerpt_separator: <!-- more -->
 
-title :   On The Way…
+title : On The Way……
 tagline: OpenCV OpenCL 
 author : 
   name : 李牙刷儿
   email : liyazhou9@gmail.com
   github : https://github.com/asialee
-  weibo : http://weibo.com/u/1632579524
+  weibo : http://www.weibo.com/1773498301/profile
   linkedin : http://cn.linkedin.com/pub/peng-xiao/40/92a/636
   qq : 503361483
 # The production_url is only used when full-domain names are needed
@@ -29,8 +29,8 @@ author :
 production_url : http://liyazhou.com
 
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
-#
-Asia Lee :
+# This is Bootstrap configurations don’t modified
+pengx :
   version : 0.3.0
 
   # All links will be namespaced by BASE_PATH if defined.
@@ -83,7 +83,7 @@ Asia Lee :
   comments :
     provider : duoshuo
     duoshuo :
-      short_name : Asia Lee
+      short_name : pengx17
    
   # Settings for analytics helper
   # Set 'provider' to the analytics provider you want to use.
@@ -112,4 +112,3 @@ Asia Lee :
   # and include your custom code. Your custom file must be defined at:
   #   ./_includes/custom/[HELPER]
   # where [HELPER] is the name of the helper you are overriding.
-  
