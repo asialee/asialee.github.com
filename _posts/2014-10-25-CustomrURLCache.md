@@ -24,7 +24,7 @@ icon: code
 
 {% highlight Objective-c%}
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
-    ………
+    ......
     //Init custom cache
     
     CustomURLCache *_mCache = [[CustomURLCache alloc] initWithMemoryCapacity:20 * 1024 * 1024
@@ -56,7 +56,7 @@ icon: code
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         
-	//Other Init code…
+	    ......
 
 	
         _mCache = (CustomURLCache *)[NSURLCache sharedURLCache];
