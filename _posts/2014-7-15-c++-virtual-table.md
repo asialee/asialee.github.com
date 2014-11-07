@@ -1,7 +1,7 @@
 ---
 layout: post
 keywords: [c++,virtual_table]
-title: [转载]c++下的虚函数机制
+title: (转载)c++下的虚函数机制
 categories: [c++]
 tags:   [c++,virtual_table]
 group: archive
@@ -28,7 +28,7 @@ C++中的虚函数的作用主要是实现了多态的机制。关于多态，�
 听我扯了那么多，我可以感觉出来你现在可能比以前更加晕头转向了。 没关系，下面就是实际的例子，相信聪明的你一看就明白了。
 
 假设我们有这样的一个类：
-
+{% highlight c++ %}
 class Base {
 public:
 virtual void f() { cout << "Base::f" << endl; }
@@ -36,9 +36,11 @@ virtual void g() { cout << "Base::g" << endl; }
 virtual void h() { cout << "Base::h" << endl; }
 
 };
+{% endhighlight %}
 
 按照上面的说法，我们可以通过Base的实例来得到虚函数表。 下面是实际例程：
 
+{% highlight c++ %}
 typedef void(*Fun)(void);
 
 Base b;
@@ -51,7 +53,7 @@ cout << "虚函数表 — 第一个函数地址：" << (int*)*(int*)(&b) << endl
 // Invoke the first virtual function 
 pFun = (Fun)*((int*)*(int*)(&b));
 pFun();
-
+{% endhighlight %}
 实际运行经果如下：(Windows XP+VS2003,  Linux 2.6.22 + GCC 4.1.3)
 
 虚函数表地址：0012FED4
@@ -61,10 +63,11 @@ Base::f
 
 通过这个示例，我们可以看到，我们可以通过强行把&b转成int *，取得虚函数表的地址，然后，再次取址就可以得到第一个虚函数的地址了，也就是Base::f()，这在上面的程序中得到了验证（把int* 强制转成了函数指针）。通过这个示例，我们就可以知道如果要调用Base::g()和Base::h()，其代码如下：
 
+{% highlight c++ %}
 (Fun)*((int*)*(int*)(&b)+0);  // Base::f()
 (Fun)*((int*)*(int*)(&b)+1);  // Base::g()
 (Fun)*((int*)*(int*)(&b)+2);  // Base::h()
-
+{% endhighlight %}
 这个时候你应该懂了吧。什么？还是有点晕。也是，这样的代码看着太乱了。没问题，让我画个图解释一下。如下所示：
 ![](/image/2014-7-15-c++-virtual-table/1.jpg)
 
