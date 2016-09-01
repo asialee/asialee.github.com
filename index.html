@@ -1,90 +1,42 @@
 ---
-layout: index
-title: Asia Lee
+layout: page
+description: "一生想做浪漫极客"
 ---
-{% include pengx/setup %}
-<!-- 按照分页插入博客文章 -->
+
 {% for post in paginator.posts %}
-<div class="well typo post post-index">
-  {% if post.featured %} {% include pengx/featured_post_decoration %} {% endif %}
-  <h2 class="title"><a href="{{ post.url }}">
-  {{ post.title }}
-  {% if post.tagline %}
-    <small>{{ post.tagline }}</small>
-  {% endif %}
-  </a></h2>
-  <div class="post_info">
-  {% unless post.categories == empty %}
-  <ul class="tag_box inline list-inline">
-    <li><i class="fa fa-calendar"></i></li>
-    <li id="post-date">{{ post.date | date: " %Y 年 %m 月 %d 日" }}</li>
-    <li><i class="fa fa-folder-open"></i></li>
-    {% assign post_categories = post.categories %}
-    {% include pengx/post_categories_info %}
-  </ul>
-  {% endunless %}  
-  <span> 
-  </div>
-  <div class="archive">
-    {% if post.tldr %}
-	  {{ post.excerpt }}
-	  <a href="{{ post.url }}" > >> 继续阅读 <<  </a>
-	{% else %}
-	  {{ post.content }}
-	{% endif %}
-  </div>
-</div>
-  {% endfor %}
-  
-  <!-- 分页页码展示 -->
-  <div id="post-pagination" class="text-center">
-    <ul class="pagination">
-      <!-- 上一页按钮 -->
-      {% if paginator.previous_page %}
-      <li>
-        {% if paginator.previous_page == 1 %}
-        <a href="/"><i class="fa fa-chevron-left"></i></a>
-        {% else %}
-        <a href="/page{{ paginator.previous_page }}"><i class="fa fa-chevron-left"></i></a>
+<div class="post-preview">
+    <a href="{{ post.url | prepend: site.baseurl }}">
+        <h2 class="post-title">
+            {{ post.title }}
+        </h2>
+        {% if post.subtitle %}
+        <h3 class="post-subtitle">
+            {{ post.subtitle }}
+        </h3>
         {% endif %}
-      </li>
-      {% else %}
-      <li class="disabled">
-      <span><i class="fa fa-chevron-left"></i></span>
-      </li>
-      {% endif %}
+        <div class="post-content-preview">
+            {{ post.content | strip_html | truncate:200 }}
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
+    </p>
+</div>
+<hr>
+{% endfor %}
 
-      <!-- 第一页,访问根目录 -->
-      {% if paginator.page == 1 %}
-      <li class="active">
-      <a href="#">1</a>
-      </li>
-      {% else %}
-      <li>
-      <a href="/">1</a>
-      </li>
-      {% endif %}
-
-      {% for count in (2..paginator.total_pages) %}
-      {% if count == paginator.page %}
-      <li class="active">
-      <a href="#">{{ count }}</a>
-      </li>
-      {% else %}
-      <li>
-      <a href="/page{{ count }}">{{ count }}</a>
-      </li>
-      {% endif %}
-      {% endfor %}
-
-      {% if paginator.next_page %}
-      <li>
-      <a href="/page{{ paginator.next_page }}"><i class="fa fa-chevron-right"></i></a>
-      </li>
-      {% else %}
-      <li class="disabled">
-      <a href="#"><i class="fa fa-chevron-right"></i></a>
-      </li>
-      {% endif %}
-    </ul>
-  </div>
+<!-- Pager -->
+{% if paginator.total_pages > 1 %}
+<ul class="pager">
+    {% if paginator.previous_page %}
+    <li class="previous">
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+    </li>
+    {% endif %}
+    {% if paginator.next_page %}
+    <li class="next">
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+    </li>
+    {% endif %}
+</ul>
+{% endif %}
