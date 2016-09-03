@@ -1,6 +1,6 @@
 ---
 layout: page
-description: "能力是面对未知的勇气"
+description: "一生想做浪漫极客"
 ---
 
 {% for post in paginator.posts %}
