@@ -16,7 +16,7 @@ layout: default
 	<body>
 		<div class="container" style="margin:0;padding:0;width:100%;">
 			<header>
-				<img width="190" height="190" src="images/avatar.png">
+				<img width="190" height="190" src="images/hux_avatar.png">
 				<h1>Hux</h1>
 				<p>An engineer majoring in Mobile,<br>
 					focusing on Mobile development, Java and Database.</p>
