@@ -1,14 +1,14 @@
 {
-    "name": "hux-blog",
-    "title": "Hux Blog",
-    "author": "Hux <huxpro@gmail.com>",
+    "name": "李牙刷儿-blog",
+    "title": "李牙刷儿 Blog",
+    "author": "李牙刷儿 <lyz900715@163.com>",
     "version": "1.6.0",
-    "homepage": "http://huxpro.github.io",
+    "homepage": "http://http://liyazhou.com/",
     "repository": {
         "type": "git",
-        "url": "https://github.com/Huxpro/huxpro.github.io"
+        "url": "https://github.com/asialee/asialee.github.com"
     },
-    "bugs": "https://github.com/Huxpro/huxpro.github.io/issues",
+    "bugs": "https://github.com/asialee/asialee.github.com/issues",
     "devDependencies": {
         "grunt": "~0.4.5",
         "grunt-contrib-less": "~0.11.4",
