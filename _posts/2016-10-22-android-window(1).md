@@ -3,7 +3,7 @@ layout: post
 title: Android窗口管理（1）——窗口基本架构
 keywords: 算法
 categories: [Android]
-tag: [Android, Window]
+tag: [Android]
 icon: code
 ---
 本文给大家介绍以下Android窗口的基本架构，平时我们在编码时打交道最多的就是各种View以及各种Layout。但系统窗口究竟是以何种形式将这些组件组织在一起，在View和Layout的上层又是通过哪些组件以什么样的方式来管理的？首先来看一下Window的基本结构：![这里写图片描述](http://img.blog.csdn.net/20161023151515419)
